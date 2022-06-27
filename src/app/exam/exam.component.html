@@ -1,0 +1,31 @@
+<article>
+    <div>
+        <h1 class="titulo">Prova GIT</h1>
+    </div>
+    <div class="space">
+        <label for="e-mail">Email ***.g&p@aneel.gov.br</label>
+    </div>
+    <div>
+        <input class="space" type="text" id="emailColaborador" #emailColaborador>
+    </div>
+    <div>
+        <button class="start-button" (click)="startExam(emailColaborador.value)">Iniciar</button>
+    </div>
+    <div>
+        <button class=" clean-button" (click)="cleanExam()">Limpar</button>
+    </div>
+    <hr>
+    <div *ngIf="isStarted">
+        <div>
+            <label class="timer" for="timer">Faltam {{time}} minutos</label>
+        </div>
+        <div>
+            <app-question *ngFor="let question of questions" [question]="question">
+            </app-question>
+        </div>
+
+        <div>
+            <button class="finish-button" (click)="alertFinishExam()">Finalizar</button>
+        </div>
+    </div>
+</article>

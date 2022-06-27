@@ -1,0 +1,9 @@
+<div>
+    <h2>{{question?.number}} - {{question?.title}}</h2>
+</div>
+<div>
+    <input type="radio" name="answer" value="Certo" (change)="onAnswerChange(certo.value)" #certo><label
+        for="Certo">Certo</label>
+    <input type="radio" name="answer" value="Errado" (change)="onAnswerChange(errado.value)" #errado><label
+        for="Errado">Errado</label>
+</div>
